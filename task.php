@@ -14,7 +14,7 @@ switch($action)
  case 'list':
     $result=$conn->query("SELECT * FROM tasks ORDER BY created_at DESC");
     while($row= $result->fetch_assoc()){
-        echo'<li class="list-group-item">'.htmlspecialchars($row['task']).'<button class="complete" data-id="'.$row['id'].'">Complete</button>'.'<button class="delete" data-id="'.$row['id'].'">Delete</button></li>';
+        echo'<li class="list-group-item">'.htmlspecialchars($row['task']).'<button class="complete btn btn-outline-success" data-id="'.$row['id'].'">Complete</button>'.'<button class="delete btn-close" data-id="'.$row['id'].'"></button></li>';
     }
     break;
 
