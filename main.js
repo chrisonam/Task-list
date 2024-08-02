@@ -14,17 +14,24 @@ $(document).ready(function(){
    }
 
    $('#addTask').click(function(){
+     
     var task = $('#task').val();
-    $.ajax({
-          url:'task.php',
-          method:'POST',
-          data:{action:'add',task:task},
-          success:function(){
-            loadTasks();
+    if(!task==""){
+        $.ajax({
+            url:'task.php',
+           method:'POST',
+           data:{action:'add',task:task},
+           success:function(){
+           loadTasks();
             $('#task').val('');
-          }
-       
+     }
+  
     });
+    }
+      else{
+        alert("The field is empty");
+      }
+         
    });
   
    $('#taskList').on('click','.complete',function(){
@@ -43,6 +50,7 @@ $(document).ready(function(){
 
    });
 
+   // Delete action 
    $('#taskList').on('click','.delete',function(){
     var id = $(this).data('id');
     $.ajax({

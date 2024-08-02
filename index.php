@@ -11,11 +11,16 @@
     <title>Task List</title>
   </head>
   <body>
+  <nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+   <h1> Task List </h1>
+  </div>
+</nav>
    
      <div class="container">
-            <h1>Tasks list!</h1>
+           
             <div class="input-group mb-3">
-                <input type="text" class="form-control" id="task"placeholder="New task" aria-label="Recipient's username" aria-describedby="button-addon2" Required>
+                <input type="text" class="form-control" id="task"placeholder="New task" aria-label="Recipient's username" aria-describedby="button-addon2" required>
                  <button class="btn btn-outline-secondary" type="button" id="addTask">Add task</button>
             </div>
             <ul class="list-group" id="taskList"></ul>

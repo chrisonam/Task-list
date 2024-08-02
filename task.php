@@ -5,6 +5,7 @@ $action = $_REQUEST['action'];
 switch($action)
 {
  case 'add':
+    
     $task = $_POST['task'];
     $stmt = $conn->prepare("INSERT INTO tasks (task) VALUES (?)");
     $stmt->bind_param("s",$task);
